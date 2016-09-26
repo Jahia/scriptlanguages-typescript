@@ -1,2 +1,4 @@
 # scriptlanguages-typescript
-A module to provide Typescript support for Jahia DX views.
+
+A module that provides typescript scripting language support. This module should mostly be considered
+as a proof-of-concept. It is not recommended to use this code in a production environment.
