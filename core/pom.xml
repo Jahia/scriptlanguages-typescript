@@ -65,12 +65,11 @@
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
-                <!--                <configuration>
-                                    <instructions>
-                                        <Export-Package>com.github.jknack.typescript.*</Export-Package>
-                                        <Jahia-Scripting-Extensions-Priorities>hbs=160</Jahia-Scripting-Extensions-Priorities>
-                                    </instructions>
-                                </configuration>-->
+                <configuration>
+                    <instructions>
+                        <Jahia-Module-Type>system</Jahia-Module-Type>
+                    </instructions>
+                </configuration>
             </plugin>
         </plugins>
     </build>
