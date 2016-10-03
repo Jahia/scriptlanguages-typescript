@@ -42,6 +42,8 @@ package org.jahia.services.render.scripting.typescript;
 import com.xafero.ts4j.TypeScriptCompiler;
 import com.xafero.ts4j.TypeScriptEngine;
 import com.xafero.ts4j.TypeScriptEngineFactory;
+import org.jahia.services.render.scripting.bundle.Configurable;
+import org.osgi.framework.Bundle;
 
 import javax.script.ScriptEngine;
 import java.util.Collections;
@@ -50,7 +52,7 @@ import java.util.List;
 /**
  * @author Christophe Laprun
  */
-public class TypescriptScriptEngineFactory extends TypeScriptEngineFactory {
+public class TypescriptScriptEngineFactory extends TypeScriptEngineFactory implements Configurable {
     private ScriptEngine js;
 
     @Override
@@ -75,13 +77,24 @@ public class TypescriptScriptEngineFactory extends TypeScriptEngineFactory {
     }
 
     private ScriptEngine getJSScriptEngine() {
-        if (js == null) {
-            TypescriptScriptEngineFactoryConfigurator.initDXScriptEngineManager(this);
-        }
+        configurePreScriptEngineCreation();
         return js;
     }
 
-    void setJs(ScriptEngine js) {
-        this.js = js;
+    @Override
+    public void configurePreRegistration(Bundle bundle) {
+        // nothing to do
+    }
+
+    @Override
+    public void destroy(Bundle bundle) {
+        // nothing to do
+    }
+
+    @Override
+    public void configurePreScriptEngineCreation() {
+        if (js == null) {
+            js = ScriptEngineManagerProvider.getInstance().getDxProvidedManager().getEngineByExtension("js");
+        }
     }
 }
