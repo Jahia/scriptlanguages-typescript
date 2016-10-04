@@ -43,7 +43,10 @@
     <artifactId>scriptlanguages-typescript</artifactId>
     <name>Typescript Script Language integration core module</name>
     <packaging>bundle</packaging>
-    <description>This module provides an integration of the Typescript language as a scripting language for Jahia
+    <description>
+        This module provides an integration of the Typescript language as a scripting language for Jahia Digital
+        Experience Manager (DX). For more information about Jahia DX, please go to:
+        https://www.jahia.com/platform/digital-experience-manager
     </description>
 
     <dependencies>

@@ -43,7 +43,7 @@
     <artifactId>scriptlanguages-typescript-examples</artifactId>
     <name>Typescript Script Language integration examples module</name>
     <packaging>bundle</packaging>
-    <description>This module provides examples of usage of the Typescript language as a scripting language for Jahia
+    <description>This module provides examples of usage of the Typescript language as a scripting language for Jahia DX
     </description>
 
     <build>
